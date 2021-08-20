@@ -1,35 +1,12 @@
 const net = require("net");
 
+//importing the connection codes
 const {connect} = require('./client')
+//importing the user input codes
+const {setupInput} = require('./input');
 
 console.log("Connecting ...");
-
-
-
+//calls the connect function
 connect();
-
-//Checks if a key is pressed and carries out an action (i.e exiting the game)
-
-const handleUserInput = function(key) {
-  console.log(key);
-  if (key === '\u0003') {
-    process.exit();
-  }
-  
-}
-//
-
- const setupInput = function() {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding('utf8');
-  stdin.resume();
-//calls the function for user input
-  stdin.on('data', handleUserInput)
-
-  return stdin;
-}
-
-
-
+//calls the setupInput function
 setupInput();
