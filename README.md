@@ -17,11 +17,11 @@ Before you can run this client, you will need to be running the server side whic
 
 ### Get Your Snake To Move - 
 
-We have implemented the good ol' **wasd** maneuvers to make the snake move.
+We have implemented the good ol' **WASD** maneuvers to make the snake move.
 
 In the gaming world : 
 
- - **w** means **UP** 
+ - **w** means **up** 
  - **a** means **left**
  - **s** means **down**
  - **d** means **right**  
@@ -37,12 +37,14 @@ In the gaming world :
 
 ### Exit the game
 
-There are 2 ways the game exits 
+There are 2 ways the game exits:
+
 -If you want a *graceful exit*  type in the command `ctrl + c`
+
 -If your snake hits any part of the border your game automatically exits and you have to start it again.
 
 *Do keep in mind that your snake dies if its idle for more than **10** seconds. After that you have to exit yourself and restart the game.*
 
-# Hope you enjoy this simple yet fun game!
+#### Hope you enjoy this simple yet fun game!
 
 
