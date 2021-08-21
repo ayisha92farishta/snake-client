@@ -1,53 +1,56 @@
+// imports the files required
+
 const net = require("net");
 
-
-// Stores the active TCP connection object.
+//Declares the variable at the highest scope to accessible by any variable/function in current file
 let connection;
 
+//'stdin' configuration codes
+
 const setupInput = function(conn) {
-  connection = conn;
+  connection = conn;   // Stores the active TCP connection object.
 
   const stdin = process.stdin;
-    stdin.setRawMode(true);
-    stdin.setEncoding('utf8');
-      //calls the function for user input
-    stdin.on('data', data => handleUserInput(data))
+  stdin.setRawMode(true);
+  stdin.setEncoding('utf8');
+  //calls the function for user input
+  stdin.on('data', data => handleUserInput(data));
 
-    stdin.resume();
+  stdin.resume();
 
- return stdin;
-}
+  return stdin;
+};
 
-//Checks if a key is pressed and carries out an action (i.e exiting the game)
+//Checks if a key is pressed and carries out an action
 
-  const handleUserInput = function(key) {
+const handleUserInput = function(key) {
   // key to exit game
   if (key === '\u0003') {
     process.exit();
   }
   //keys to control movement of the snake
   if (key === 'w') {
-    connection.write("Move: up") ;
+    connection.write("Move: up");
   }
   if (key === 'd')  {
-    connection.write("Move: right"); 
+    connection.write("Move: right");
   }
   if (key === 's') {
-     connection.write("Move: down"); 
+    connection.write("Move: down");
   }
   if (key === 'a') {
-    connection.write("Move: left"); 
+    connection.write("Move: left");
   }
-  // special keys to interact with other players
+  // special keys to send out canned messages
   if (key === 'k') {
-    connection.write("Say: Behind you!")
+    connection.write("Say: Behind you!");
   }
-  if(key === 'j') {
-    connection.write("Say: I'm John Cena!")
+  if (key === 'j') {
+    connection.write("Say: I'm John Cena!");
   }
-  if( key === 'l') {
-    connection.write("Say: See ya l8r")
+  if (key === 'l') {
+    connection.write("Say: See ya l8r");
   }
-}
+};
 
-module.exports = {setupInput}
+module.exports = {setupInput};

@@ -1,14 +1,15 @@
-const net = require("net");
+// imports the files required
 
-//importing the connection codes
-const {connect} = require('./client')
-//importing the user input codes
+const {connect} = require('./client');
+
 const {setupInput} = require('./input');
 
-console.log("Connecting ...");
-//calls the connect function
+//message while connecting
 
-//calls the setupInput function
-const conn = connect()
+console.log("Connecting ...");
+
+//calls the setupInput and connect function
+
+const conn = connect();
 
 setupInput(conn);
