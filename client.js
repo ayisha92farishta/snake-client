@@ -14,13 +14,11 @@ const connect = function () {
   //intepret incoming data as text 
   conn.setEncoding("utf8");
 
-
   //incoming data handling
   conn.on('data',(data) => {
     console.log('Server says: ', data);
   
   })
-
   //prints a message when connection is established
 
   conn.on('connect', () => {
@@ -29,14 +27,9 @@ const connect = function () {
     conn.write("Name: AFA");
    
   })
-
-
   return conn;
 
 };
-
-
-
 
 console.log("Connecting ...");
 
