@@ -51,6 +51,10 @@ const handleUserInput = function(key) {
   if (key === 'l') {
     connection.write("Say: See ya l8r");
   }
+  if (key === 'p') {
+    connection.write("Say: Cant touch dis");
+  }
+ 
 };
 
 module.exports = {setupInput};
