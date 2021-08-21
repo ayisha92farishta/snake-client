@@ -1,14 +1,12 @@
 const net = require("net");
 
-function myCallback(conn) {
-  conn.write("Move: up");
-}
+const { IP, PORT } = require('./constants');
 
 //establishes a connection with the game server
 const connect = function () {
   const conn = net.createConnection({
-    host: "localhost",
-    port: 50541
+    host: IP,
+    port: PORT
   })
 
   //intepret incoming data as text 
@@ -25,6 +23,7 @@ const connect = function () {
     console.log("Successfully connected to game server")
     //gives our snake a name(i.e. AFA)
     conn.write("Name: AFA");
+
    
   })
   return conn;
